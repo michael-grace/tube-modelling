@@ -28,8 +28,13 @@ class PlatformEntrance:
         return self._platform_position
 
 class Platform:
-    def __init__(self, num_sections: int, entrances: list[PlatformEntrance], loading_type: LoadingType):
+    def __init__(self, name: str, num_sections: int, entrances: list[PlatformEntrance], loading_type: LoadingType):
+        self._name: str = name
         self._num_sections: int = num_sections
+
+        if sum(x.passenger_proportion for x in entrances) != 1:
+            raise ValueError
+
         self._entrances: list[PlatformEntrance] = entrances
         self._loading_type: LoadingType = loading_type
         self.empty_platform()
@@ -56,6 +61,14 @@ class Platform:
     @property
     def sections(self):
         return self._sections
+
+    @property
+    def loading_type(self):
+        return self._loading_type
+
+    @property
+    def name(self):
+        return self._name
 
     def __repr__(self):
         return str(self._sections)

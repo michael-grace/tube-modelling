@@ -7,7 +7,12 @@ class Train:
 
     def empty_train(self, num_people_leaving: int, loading_type: LoadingType):
         num_people_on_train = sum(self._sections)
-        leaving_prob = num_people_leaving * loading_type.value / num_people_on_train
+
+        try:
+            leaving_prob = num_people_leaving * loading_type.value / num_people_on_train
+        except ZeroDivisionError:
+            leaving_prob = 0
+        
         new_train = [round(x * (1-leaving_prob)) for x in self._sections]
         self._sections = new_train
 
