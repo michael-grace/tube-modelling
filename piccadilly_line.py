@@ -54,43 +54,43 @@ DeepTubeTrain().run_journey([
         PlatformEntrance(0, 0.5),
         PlatformEntrance(1, 0.5)
     ], LoadingType.MostlyLoading, 20.29 * MILLION * 0.5, 21),
-    
+
     DeepTubeLinePlatform("Barons' Court", [
         PlatformEntrance(0)
     ], LoadingType.MostlyLoading, 5.24 * 0.5 * MILLION, 21),
 
     DeepTubeLinePlatform("Earl's Court",
-    [PlatformEntrance(0.33, 0.5),
-    PlatformEntrance(0.66, 0.5)],
-    LoadingType.Equal, 15.78 * MILLION, 21),
+                         [PlatformEntrance(0.33, 0.5),
+                          PlatformEntrance(0.66, 0.5)],
+                         LoadingType.Equal, 15.78 * MILLION, 21),
 
     DeepTubeLinePlatform("Gloucester Road",
-    [PlatformEntrance(0.33)], LoadingType.Equal, 11.35 * MILLION * 0.5, 21),
+                         [PlatformEntrance(0.33)], LoadingType.Equal, 11.35 * MILLION * 0.5, 21),
 
     DeepTubeLinePlatform("South Kensington",
-    [PlatformEntrance(0.33)], LoadingType.Equal, 26.09 * MILLION * 0.5, 21),
+                         [PlatformEntrance(0.33)], LoadingType.Equal, 26.09 * MILLION * 0.5, 21),
 
     DeepTubeLinePlatform("Knightsbridge",
-    [PlatformEntrance(0.33)], LoadingType.Equal, 13.57 * MILLION, 21),
+                         [PlatformEntrance(0.33)], LoadingType.Equal, 13.57 * MILLION, 21),
 
-    DeepTubeLinePlatform("Hyde Park Corner", 
-    [PlatformEntrance(0)], LoadingType.Equal, 4.16 * MILLION, 21),
+    DeepTubeLinePlatform("Hyde Park Corner",
+                         [PlatformEntrance(0)], LoadingType.Equal, 4.16 * MILLION, 21),
 
     DeepTubeLinePlatform("Green Park",
-    [PlatformEntrance(1, 0.66), PlatformEntrance(0.5, 0.34)], LoadingType.Equal, 28.25 * MILLION, 21),
+                         [PlatformEntrance(1, 0.66), PlatformEntrance(0.5, 0.34)], LoadingType.Equal, 28.25 * MILLION, 21),
 
     DeepTubeLinePlatform("Piccadilly Circus",
-    [PlatformEntrance(0.5, 0.7), PlatformEntrance(0.2, 0.3)], LoadingType.Equal, 26.74 * MILLION, 21),
+                         [PlatformEntrance(0.5, 0.7), PlatformEntrance(0.2, 0.3)], LoadingType.Equal, 26.74 * MILLION, 21),
 
     DeepTubeLinePlatform("Leicester Square",
-    [PlatformEntrance(0.2, 0.7), PlatformEntrance(1, 0.3)], LoadingType.Equal, 27.38 * MILLION, 21),
+                         [PlatformEntrance(0.2, 0.7), PlatformEntrance(1, 0.3)], LoadingType.Equal, 27.38 * MILLION, 21),
 
     DeepTubeLinePlatform("Covent Garden",
-    [PlatformEntrance(0.4)], LoadingType.Equal, 12.57 * MILLION, 21),
+                         [PlatformEntrance(0.4)], LoadingType.Equal, 12.57 * MILLION, 21),
 
     DeepTubeLinePlatform("Holborn",
-    [PlatformEntrance(0.6)], LoadingType.Equal, 20.24 * MILLION, 21),
+                         [PlatformEntrance(0.6)], LoadingType.Equal, 20.24 * MILLION, 21),
 
     DeepTubeLinePlatform("Russell Square",
-    [PlatformEntrance(0.7)], LoadingType.Equal, 7.82 * MILLION, 21)
+                         [PlatformEntrance(0.7)], LoadingType.Equal, 7.82 * MILLION, 21)
 ])

@@ -1,6 +1,7 @@
 import math
 from enum import Enum
 
+
 class LoadingType(Enum):
     FullyLoading = 0
     MostlyLoading = 0.3
@@ -8,8 +9,10 @@ class LoadingType(Enum):
     MostlyEmptying = 0.7
     FullyEmptying = 1
 
+
 class PlatformEntrance:
-    def __init__(self, platform_position: float, passenger_proportion: float = 1):
+    def __init__(self, platform_position: float,
+                 passenger_proportion: float = 1):
         if platform_position < 0 or platform_position > 1:
             raise ValueError
 
@@ -27,8 +30,10 @@ class PlatformEntrance:
     def platform_position(self):
         return self._platform_position
 
+
 class Platform:
-    def __init__(self, name: str, num_sections: int, entrances: list[PlatformEntrance], loading_type: LoadingType):
+    def __init__(self, name: str, num_sections: int,
+                 entrances: list[PlatformEntrance], loading_type: LoadingType):
         self._name: str = name
         self._num_sections: int = num_sections
 
@@ -45,14 +50,31 @@ class Platform:
             passengers_per_entrance = num_passengers * entrance.passenger_proportion
 
             # find the platform section of the entrance
-            entrance_section = min(math.floor(self._num_sections * entrance.platform_position), self._num_sections - 1)
+            entrance_section = min(
+                math.floor(
+                    self._num_sections *
+                    entrance.platform_position),
+                self._num_sections -
+                1)
 
-            # find the maximum distance to walk (in platform sections) from the entrance
-            max_walk_distance = max(entrance_section, self._num_sections - 1 - entrance_section)
+            # find the maximum distance to walk (in platform sections) from the
+            # entrance
+            max_walk_distance = max(
+                entrance_section, self._num_sections - 1 - entrance_section)
 
-            distribution_proportions = [1 + max_walk_distance - abs(entrance_section - i) for i in range(self._num_sections)]
+            distribution_proportions = [1 +
+                                        max_walk_distance -
+                                        abs(entrance_section -
+                                            i) for i in range(self._num_sections)]
             total_distribution_blocks = sum(distribution_proportions)
-            new_train = [self._sections[x] + round(num_passengers * entrance.passenger_proportion * distribution_proportions[x]/total_distribution_blocks) for x in range(self._num_sections)]
+            new_train = [
+                self._sections[x] +
+                round(
+                    num_passengers *
+                    entrance.passenger_proportion *
+                    distribution_proportions[x] /
+                    total_distribution_blocks) for x in range(
+                    self._num_sections)]
             self._sections = new_train
 
     def empty_platform(self):
